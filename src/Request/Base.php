@@ -43,7 +43,7 @@ abstract class Base
                     $data[] = $this->buildRpcValue($v);
                 }
                 return new PhpXmlRpcValue($data, PhpXmlRpcValue::$xmlrpcArray);
-            case 'double':
+            //case 'double':
             case 'float':
                 return new PhpXmlRpcValue($value, PhpXmlRpcValue::$xmlrpcDouble);
             case 'boolean':
@@ -96,7 +96,7 @@ abstract class Base
                     throw new UnexpectedValueException("$name must be of the type array, " . gettype($value) . " given");
                 }
                 break;
-            case 'double':
+            //case 'double':
             case 'float':
                 if (!is_float($value)) {
                     throw new UnexpectedValueException("$name must be of the type float, " . gettype($value) . " given");

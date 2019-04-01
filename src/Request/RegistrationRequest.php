@@ -17,4 +17,10 @@ class RegistrationRequest extends Base
         'documents' => 'array',
         'type' => 'string',
     ];
+
+    public function addDocument($document)
+    {
+        $this->attributes['documents'][] = $document;
+        return $this;
+    }
 }

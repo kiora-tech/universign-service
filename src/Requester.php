@@ -2,9 +2,12 @@
 
 namespace Globalis\Universign;
 
+use Globalis\Universign\Request\AccountMatch;
+use Globalis\Universign\Request\ValidationRequest;
 use Globalis\Universign\Response\TransactionDocument;
 use Globalis\Universign\Response\TransactionInfo;
 use Globalis\Universign\Request\TransactionRequest;
+use Globalis\Universign\Request\StandaloneRegistrationRequest;
 use Globalis\Universign\Response\TransactionResponse;
 use PhpXmlRpc\Value;
 
@@ -117,6 +120,81 @@ class Requester extends Base
                 'requester.cancelTransaction',
                 new Value($transactionId, 'string')
             )
+        );
+    }
+
+
+
+    /**
+     * Requests the standalone registration of the signer (level 2).
+     *
+     * Sends the signer identity to be certified and returns an URL where the signer should be redirected to.
+     * The registration process is similar to the transaction one but without documents to sign.
+     *
+     * @param   \Globalis\Universign\Request\StandaloneRegistrationRequest  $request
+     */
+    public function requestRegistration(StandaloneRegistrationRequest $request)
+    {
+        return new TransactionResponse(
+            $this->sendRequest(
+                'requester.requestRegistration',
+                $request->buildRpcValues()
+            )
+        );
+    }
+
+
+
+
+    /**
+     * Validate a user by identity card (level 2).
+     *
+     * Cette méthode permet d’activer les services de validation d’identité Universign :
+     * à partir des éléments transmis nom, prénom, date de naissance et documents justificatifs de l’identité.
+     *
+     * @param   \Globalis\Universign\Request\ValidationRequest  $request
+     */
+    public function requestValidation(ValidationRequest $request)
+    {
+        return $this->sendRequest(
+            'requester.validationRequest',
+                    $request->buildRpcValues()
+        );
+    }
+
+
+    /**
+     * Verify if the account exists in universign bases or not (level 2).
+     *
+     * Le service de Matching est un outil permettant d’identifier un compte existant dans les bases Universign à partir d’un couple Nom/Prénom,
+     * ainsi qu'au moins un moyen de contact parmi le couple email /téléphone mobile.
+     * La méthode renvoie également l'info sur l'existence d'un certificat (none, advanced, certified).
+     * Cette méthode est en général utilisée en amont de la pré-validation puisque dans le cas d’un utilisateur déjà certifié la pré-validation est inutile.
+     *
+     * @param   \Globalis\Universign\Request\AccountMatch  $request
+     */
+    public function matchAccount(AccountMatch $request)
+    {
+        return $this->sendRequest(
+            'matcher.matchAccount',
+                    $request->buildRpcValues()
+        );
+    }
+
+
+    /**
+     * Refreshes the creation date for the transaction.
+     *
+     * The invitation email is sent again if the parameters allow it (chainingMode equals email and in the case of the first signer, mustContactFirstSigner equals true).
+     * This method can be used to postpone the expiration date of the transaction.
+     *
+     * @param   $transactionId
+     */
+    public function relaunchTransaction($transactionId)
+    {
+        return $this->sendRequest(
+            'requester.relaunchTransaction',
+            new Value($transactionId, 'string')
         );
     }
 }
