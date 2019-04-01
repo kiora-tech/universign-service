@@ -1,17 +1,17 @@
 {
-    "name": "globalis/universign-service",
-    "description": "PHP library for universign service",
+    "name": "mh-ing/universign-service",
+    "description": "PHP library for universign service forked from https://github.com/globalis-ms/universign-service",
     "type": "library",
-    "homepage": "https://github.com/globalis-ms/universign-service",
+    "homepage": "https://github.com/mh-ing/universign-service",
     "license": "MIT",
     "authors": [
         {
-            "name": "Romain GUGERT",
-            "email": "romain.gugert@globalis-ms.com"
+            "name": "Mondher HAMDI",
+            "email": "mondher.hamdi.ing@gmail.com"
         },
         {
-            "name":"GLOBALIS media systems",
-            "homepage":"https://www.globalis-ms.com/"
+            "name":"Universign implementation",
+            "homepage":"https://www.linkedin.com/in/mondher-hamdi-ing/"
         }
     ],
     "require": {
