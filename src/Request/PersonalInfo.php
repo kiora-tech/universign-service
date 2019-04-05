@@ -8,6 +8,6 @@ class PersonalInfo extends Base
     protected $attributesDefinitions = [
         'firstname' => 'string',
         'lastname' => 'string',
-        'birthDate' => 'DateTime',
+        'birthDate' => 'datetime',
     ];
 }

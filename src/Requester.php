@@ -9,6 +9,7 @@ use Globalis\Universign\Response\TransactionInfo;
 use Globalis\Universign\Request\TransactionRequest;
 use Globalis\Universign\Request\StandaloneRegistrationRequest;
 use Globalis\Universign\Response\TransactionResponse;
+use Globalis\Universign\Response\ValidatorResult;
 use PhpXmlRpc\Value;
 
 class Requester extends Base
@@ -156,9 +157,11 @@ class Requester extends Base
      */
     public function requestValidation(ValidationRequest $request)
     {
-        return $this->sendRequest(
-            'requester.validationRequest',
+        return new ValidatorResult(
+            $this->sendRequest(
+            'validator.validate',
                     $request->buildRpcValues()
+            )
         );
     }
 

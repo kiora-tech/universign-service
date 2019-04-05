@@ -40,10 +40,15 @@ abstract class Base
             case 'array':
                 $data = [];
                 foreach ($value as $v) {
-                    $data[] = $this->buildRpcValue($v);
+                    if(is_string($v) && strlen($v) > 512) {
+                        $data[] = $this->buildRpcValue($v, PhpXmlRpcValue::$xmlrpcBase64);
+                    } else {
+                        $data[] = $this->buildRpcValue($v);
+                    }
                 }
                 return new PhpXmlRpcValue($data, PhpXmlRpcValue::$xmlrpcArray);
-            //case 'double':
+            case 'double':
+                return new PhpXmlRpcValue($value, PhpXmlRpcValue::$xmlrpcDouble);
             case 'float':
                 return new PhpXmlRpcValue($value, PhpXmlRpcValue::$xmlrpcDouble);
             case 'boolean':
