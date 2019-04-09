@@ -4,6 +4,7 @@ namespace Globalis\Universign;
 
 use Globalis\Universign\Request\AccountMatch;
 use Globalis\Universign\Request\ValidationRequest;
+use Globalis\Universign\Response\AccountMatchResult;
 use Globalis\Universign\Response\TransactionDocument;
 use Globalis\Universign\Response\TransactionInfo;
 use Globalis\Universign\Request\TransactionRequest;
@@ -179,8 +180,8 @@ class Requester extends Base
     public function matchAccount(AccountMatch $request)
     {
         return $this->sendRequest(
-            'matcher.matchAccount',
-                    $request->buildRpcValues()
+    'matcher.matchAccount',
+            $request->buildRpcValues()
         );
     }
 
@@ -198,6 +199,22 @@ class Requester extends Base
         return $this->sendRequest(
             'requester.relaunchTransaction',
             new Value($transactionId, 'string')
+        );
+    }
+
+
+    /**
+     * Returns the operator status. The return value can be:
+     *
+     *
+     *
+     * @param   $email
+     */
+    public function checkOperatorStatus($email)
+    {
+        return $this->sendRequest(
+            'ra.checkOperatorStatus',
+            new Value($email, 'string')
         );
     }
 }
