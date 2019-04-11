@@ -31,5 +31,6 @@ class TransactionSigner extends Base
         'failURL' => 'string',
         'certificateType' => 'string',
         'idDocuments' => 'Globalis\Universign\Request\RegistrationRequest',
+        'validationSessionId' => 'string',
     ];
 }
