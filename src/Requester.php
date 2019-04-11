@@ -217,4 +217,20 @@ class Requester extends Base
             new Value($email, 'string')
         );
     }
+
+
+    /**
+     * This service allows the admin of an organization to revoke a user’s certificate identified by its emails or phone number.
+     *
+     *
+     *
+     * @param   $emailOrPhoneNumber
+     */
+    public function revokeCertificate($emailOrPhoneNumber)
+    {
+        return $this->sendRequest(
+            'ra.revokeCertificate',
+            new Value($emailOrPhoneNumber, 'string')
+        );
+    }
 }
