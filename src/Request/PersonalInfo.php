@@ -2,6 +2,13 @@
 
 namespace Globalis\Universign\Request;
 
+/**
+ * Class PersonalInfo
+ * @package Globalis\Universign\Request
+ * @method $this setFirstname(string $firstname)
+ * @method $this setLastname(string $lastname)
+ * @method $this setBirthDate(\DateTime $birthDate)
+ */
 class PersonalInfo extends Base
 {
 

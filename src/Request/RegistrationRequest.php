@@ -2,6 +2,12 @@
 
 namespace Globalis\Universign\Request;
 
+/**
+ * Class RegistrationRequest
+ * @package Globalis\Universign\Request
+ * @method $this setDocuments(array $documents)
+ * @method $this setType(string $type)
+ */
 class RegistrationRequest extends Base
 {
 

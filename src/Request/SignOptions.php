@@ -2,6 +2,17 @@
 
 namespace Globalis\Universign\Request;
 
+/**
+ * Class SignOptions
+ * @package Globalis\Universign\Request
+ * @method $this setProfile(string $profile)
+ * @method $this setSignatureField(SignatureField $signatureField)
+ * @method $this setReason(string $reason)
+ * @method $this setLocation(string $location)
+ * @method $this setSignatureFormat(string $signatureFormat)
+ * @method $this setLanguage(string $language)
+ * @method $this setPatternName(string $patternName)
+ */
 class SignOptions extends Base
 {
     const SIGNATURE_FORMAT_PADES = 'PADES';

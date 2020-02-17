@@ -2,6 +2,19 @@
 
 namespace Globalis\Universign\Request;
 
+/**
+ * Class TransactionDocument
+ * @package Globalis\Universign\Request
+ *
+ * @method $this setDocumentType(string $documentType)
+ * @method $this setContent(string $content)
+ * @method $this setUrl(string $url)
+ * @method $this setName(string $name)
+ * @method $this setCheckBoxTexts(array $checkBoxTexts)
+ * @method $this setMetaData(array $metaData)
+ * @method $this setSignatureFields(array $signatureFields)
+ * @method $this setSEPAData(SEPAData $SEPAData)
+ */
 class TransactionDocument extends Base
 {
     protected $attributesDefinitions = [

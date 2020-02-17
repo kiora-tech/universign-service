@@ -2,6 +2,18 @@
 
 namespace Globalis\Universign\Request;
 
+/**
+ * Class TransactionSigner
+ * @package Globalis\Universign\Request
+ * @method $this setFirstname(string $firstName)
+ * @method $this setLastname(string $lastName)
+ * @method $this setPhoneNum(string $phoneNum)
+ * @method $this setEmailAddress(string $emailAddress)
+ * @method $this setSuccessURL(string $successURL)
+ * @method $this setCancelURL(string $cancelURL)
+ * @method $this setFailURL(string $failURL)
+ * @method $this setProfile(string $profile)
+ */
 class TransactionSigner extends Base
 {
     const ROLE_SIGNER = 'Signer';

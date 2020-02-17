@@ -2,6 +2,23 @@
 
 namespace Globalis\Universign\Request;
 
+/**
+ * Class TransactionRequest
+ * @package Globalis\Universign\Request
+ * @method $this setProfile(string $profile)
+ * @method $this setCustomId(string $customId)
+ * @method $this setMustContactFirstSigner(bool $mustContactFirstSigner)
+ * @method $this setFinalDocRequesterSent(bool $finalDocRequesterSent)
+ * @method $this setFinalDocSent(bool $finalDocSent)
+ * @method $this setFinalDocObserverSent(bool $finalDocObserverSent)
+ * @method $this setDescription(string $description)
+ * @method $this setCertificateType(string $certificateType)
+ * @method $this setLanguage(string $language)
+ * @method $this setHandwrittenSignatureMode(int $handwrittenSignatureMode)
+ * @method $this setChainingMode(string $chainingMode)
+ * @method $this setSigners(array $signers)
+ * @method $this setDocuments(array $documents)
+ */
 class TransactionRequest extends Base
 {
     // Handwritten Modes

@@ -2,6 +2,12 @@
 
 namespace Globalis\Universign\Request;
 
+/**
+ * Class IdDocument
+ * @package Globalis\Universign\Request
+ * @method $this setPhotos(array $photos)
+ * @method $this setType(int $type)
+ */
 class IdDocument extends Base
 {
 
