@@ -36,7 +36,12 @@ class TransactionDocument extends Base
         return parent::extractParamNameFromSetter($method);
     }
 
-    public function setPath($path)
+    /**
+     * setPath
+     * @param string $path
+     * @return $this
+     */
+    public function setPath(string $path):self
     {
         if (file_exists($path)) {
             if (!isset($this->attributes['name'])) {
@@ -47,7 +52,12 @@ class TransactionDocument extends Base
         return $this;
     }
 
-    public function addSignatureField(DocSignatureField $signatureField)
+    /**
+     * addSignatureField
+     * @param \Globalis\Universign\Request\DocSignatureField $signatureField
+     * @return $this
+     */
+    public function addSignatureField(DocSignatureField $signatureField):self
     {
         $this->attributes['signatureFields'][] = $signatureField;
         return $this;
