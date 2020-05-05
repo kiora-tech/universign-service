@@ -1,10 +1,14 @@
 {
-    "name": "mh-ing/universign-service",
+    "name": "obatfr/universign-service",
     "description": "PHP library for universign service forked from https://github.com/globalis-ms/universign-service",
     "type": "library",
-    "homepage": "https://github.com/mh-ing/universign-service",
+    "homepage": "https://github.com/Obatfr/universign-service",
     "license": "MIT",
     "authors": [
+        {
+            "name": "Obat Fr - Thibaud Favareille",
+            "email": "tfavareille@gmail.com"
+        },
         {
             "name": "Mondher HAMDI",
             "email": "mondher.hamdi.ing@gmail.com"
