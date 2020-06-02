@@ -23,7 +23,7 @@ class TransactionDocument extends Base
         'url' => 'string',
         'name' => 'string',
         'checkBoxTexts' => 'array',
-        'metaData' => 'array',
+        'metaData' => 'struct',
         'signatureFields' => 'array',
         'SEPAData' => 'Globalis\Universign\Request\SEPAData',
     ];

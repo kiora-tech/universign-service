@@ -47,8 +47,17 @@ abstract class Base
                     }
                 }
                 return new PhpXmlRpcValue($data, PhpXmlRpcValue::$xmlrpcArray);
+            case 'struct':
+                $data = [];
+                foreach ($value as $v) {
+                    if(is_string($v) && strlen($v) > 512) {
+                        $data[] = $this->buildRpcValue($v, PhpXmlRpcValue::$xmlrpcBase64);
+                    } else {
+                        $data[] = $this->buildRpcValue($v);
+                    }
+                }
+                return new PhpXmlRpcValue($data, PhpXmlRpcValue::$xmlrpcStruct);
             case 'double':
-                return new PhpXmlRpcValue($value, PhpXmlRpcValue::$xmlrpcDouble);
             case 'float':
                 return new PhpXmlRpcValue($value, PhpXmlRpcValue::$xmlrpcDouble);
             case 'boolean':
@@ -95,6 +104,7 @@ abstract class Base
                     throw new UnexpectedValueException("$name must be of the type string, " . gettype($value) . " given");
                 }
                 break;
+            case 'struct':
             case 'array':
                 // @TODO array[type] ??? or closure ?
                 if (!is_array($value)) {
