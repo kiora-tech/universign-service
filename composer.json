@@ -1,8 +1,8 @@
 {
-    "name": "obatfr/universign-service",
+    "name": "kiora/universign-service",
     "description": "PHP library for universign service forked from https://github.com/globalis-ms/universign-service",
     "type": "library",
-    "homepage": "https://github.com/Obatfr/universign-service",
+    "homepage": "https://github.com/kiora-tech/universign-service",
     "license": "MIT",
     "authors": [
         {
