@@ -7,7 +7,7 @@ namespace Globalis\Universign\Request;
  * @package Globalis\Universign\Request
  *
  * @method $this setName(string $name)
- * @method $this setPage(string $page)
+ * @method $this setPage(int $page)
  * @method $this setX(int $x)
  * @method $this setY(int $y)
  * @method $this setSignerIndex(int $signerIndex)
