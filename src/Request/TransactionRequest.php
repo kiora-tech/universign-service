@@ -52,13 +52,13 @@ class TransactionRequest extends Base
         'documents' => 'array',
     ];
 
-    public function addSigner(TransactionSigner $signer)
+    public function addSigner(TransactionSigner $signer): self
     {
         $this->attributes['signers'][] = $signer;
         return $this;
     }
 
-    public function addDocument(TransactionDocument $document)
+    public function addDocument(TransactionDocument $document): self
     {
         $this->attributes['documents'][] = $document;
         return $this;

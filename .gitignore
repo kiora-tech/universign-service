@@ -17,6 +17,7 @@ Thumbs.db
 .buildpath
 .project
 .vscode
+.idea
 
 # Netbeans
 /nbproject
