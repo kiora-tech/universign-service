@@ -35,6 +35,12 @@ class TransactionRequest extends Base
 
     const CHAINING_MODE_WEB = 'web';
 
+    // Certificate types
+    const CERTIFICATE_TYPE_SIMPLE = 'simple';
+
+    const CERTIFICATE_TYPE_ADVANCED = 'advanced';
+
+    const CERTIFICATE_TYPE_CERTIFIED = 'certified';
 
     protected $attributesDefinitions = [
         'profile' => 'string',
